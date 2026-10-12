@@ -1,0 +1,247 @@
+/* Color Variables & Global Styles */
+:root {
+    --pastel-pink: #f7d6e0;
+    --sage-green: #a3b899;
+    --sage-dark: #6f8265;
+    --text-color: #2c3e2d;
+    --bg-color: #fcf9f5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Navigation Styles */
+header {
+    background-color: var(--pastel-pink);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--sage-dark);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--sage-dark);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--sage-dark);
+    cursor: pointer;
+}
+
+/* Hero / About Section */
+.hero-section {
+    padding: 8rem 2rem 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(163, 184, 153, 0.15);
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--sage-green);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: var(--sage-dark);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+    margin-bottom: 1rem;
+}
+
+.bio {
+    color: #555;
+}
+
+/* Projects Section */
+.projects-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.projects-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--sage-dark);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border-top: 5px solid var(--sage-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(163, 184, 153, 0.3);
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* Footer / Contact Section */
+.footer-section {
+    background-color: var(--sage-green);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-section h2 {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+    margin-bottom: 1.5rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-links a {
+    color: var(--white);
+    background-color: var(--sage-dark);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.contact-links a:hover {
+    background-color: var(--text-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--pastel-pink);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+}
